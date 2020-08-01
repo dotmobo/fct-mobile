@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fct_mobile/home_page.dart';
+import 'package:fct_mobile/webview.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,10 +7,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter WebView',
+        title: 'Football Club Thannenkirch',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomePage());
+        home: MyWebView(
+            title: "Football Club Thannenkirch",
+            selectedUrl: "http://fct.pythonanywhere.com/"));
   }
 }

@@ -1,13 +1,9 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:easy_web_view/easy_web_view.dart';
 
 class MyWebView extends StatelessWidget {
   final String title;
   final String selectedUrl;
-
-  final Completer<WebViewController> _controller =
-      Completer<WebViewController>();
 
   MyWebView({
     @required this.title,
@@ -20,12 +16,14 @@ class MyWebView extends StatelessWidget {
         appBar: AppBar(
           title: Text(title),
         ),
-        body: WebView(
-          initialUrl: selectedUrl,
-          javascriptMode: JavascriptMode.unrestricted,
-          onWebViewCreated: (WebViewController webViewController) {
-            _controller.complete(webViewController);
-          },
+        body: EasyWebView(
+          src: selectedUrl,
+          isHtml: false, // Use Html syntax
+          isMarkdown: false, // Use markdown syntax
+          convertToWidgets: false,
+          onLoaded: () {}, // Try to convert to flutter widgets
+          // width: 100,
+          // height: 100,
         ));
   }
 }
