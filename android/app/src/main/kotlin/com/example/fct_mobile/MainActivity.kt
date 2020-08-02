@@ -1,4 +1,4 @@
-package com.example.fct_mobile
+package fr.thannenkirch.football.fct_mobile
 
 import io.flutter.embedding.android.FlutterActivity
 
